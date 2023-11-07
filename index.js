@@ -60,8 +60,9 @@ var result;
   return result;
 }*/
 
-// Add event listener to buttons
+const results = document.querySelector("div");
 
+// Add event listener to buttons
 // Rock Button
 
 const rock_button = document.querySelector(".rock");
@@ -73,10 +74,14 @@ rock_button.addEventListener("click", () => {
   computerSelection = getComputerChoice();
 
   playRound(playerSelection, computerSelection);
-  console.log("player selection " + playerSelection);
-  console.log("computer selection " + computerSelection);
-  console.log(computerScore);
-  console.log(playerScore);
+
+  results.textContent =
+    "You have " +
+    playerScore +
+    " points! " +
+    "The computer has " +
+    computerScore +
+    " points!";
 });
 
 // Scissors Button
@@ -86,10 +91,13 @@ scissors_button.addEventListener("click", () => {
   computerSelection = getComputerChoice();
 
   playRound(playerSelection, computerSelection);
-  console.log("player selection " + playerSelection);
-  console.log("computer selection " + computerSelection);
-  console.log(computerScore);
-  console.log(playerScore);
+  results.textContent =
+    "You have " +
+    playerScore +
+    " points! " +
+    "The computer has " +
+    computerScore +
+    " points!";
 });
 
 // Paper Button
@@ -99,8 +107,11 @@ paper_button.addEventListener("click", () => {
   computerSelection = getComputerChoice();
 
   playRound(playerSelection, computerSelection);
-  console.log("player selection " + playerSelection);
-  console.log("computer selection " + computerSelection);
-  console.log(computerScore);
-  console.log(playerScore);
+  results.textContent =
+    "You have " +
+    playerScore +
+    " points! " +
+    "The computer has " +
+    computerScore +
+    " points!";
 });
