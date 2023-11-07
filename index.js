@@ -1,7 +1,7 @@
 var computerChoice = ["rock", "paper", "scissors"];
 var playerScore = 0;
 var computerScore = 0;
-var playerSelection = "paper";
+var playerSelection;
 var computerSelection = getComputerChoice();
 
 // Function to get a Random Computer choice between the 3 strings in the var computerChoice
@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
 // Function to play as many rounds as the player inserts
 var result;
 
-function game(rounds) {
+/*function game(rounds) {
   for (i = 0; i < rounds; i++) {
     computerSelection = getComputerChoice();
     playerSelection = prompt("insert selection").toLocaleLowerCase();
@@ -58,4 +58,49 @@ function game(rounds) {
   playerScore = 0;
   computerScore = 0;
   return result;
-}
+}*/
+
+// Add event listener to buttons
+
+// Rock Button
+
+const rock_button = document.querySelector(".rock");
+const scissors_button = document.querySelector(".scissors");
+const paper_button = document.querySelector(".paper");
+
+rock_button.addEventListener("click", () => {
+  playerSelection = "rock";
+  computerSelection = getComputerChoice();
+
+  playRound(playerSelection, computerSelection);
+  console.log("player selection " + playerSelection);
+  console.log("computer selection " + computerSelection);
+  console.log(computerScore);
+  console.log(playerScore);
+});
+
+// Scissors Button
+
+scissors_button.addEventListener("click", () => {
+  playerSelection = "scissors";
+  computerSelection = getComputerChoice();
+
+  playRound(playerSelection, computerSelection);
+  console.log("player selection " + playerSelection);
+  console.log("computer selection " + computerSelection);
+  console.log(computerScore);
+  console.log(playerScore);
+});
+
+// Paper Button
+
+paper_button.addEventListener("click", () => {
+  playerSelection = "paper";
+  computerSelection = getComputerChoice();
+
+  playRound(playerSelection, computerSelection);
+  console.log("player selection " + playerSelection);
+  console.log("computer selection " + computerSelection);
+  console.log(computerScore);
+  console.log(playerScore);
+});
