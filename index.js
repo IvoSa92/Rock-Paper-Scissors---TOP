@@ -3,6 +3,9 @@ var playerScore = 0;
 var computerScore = 0;
 var playerSelection;
 var computerSelection = getComputerChoice();
+const score = document.querySelector("p");
+const text = document.querySelector("h2");
+const results = document.querySelector("p");
 
 // Function to get a Random Computer choice between the 3 strings in the var computerChoice
 
@@ -16,22 +19,49 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == "rock" && computerSelection == "paper") {
     computerScore++;
-    return "paper beats rock, you fuckin Looooser !";
+    text.textContent = "paper beats rock, you Looooser !";
+    results.textContent =
+      "Your score: " + playerScore + "  Computer score: " + computerScore;
   } else if (playerSelection == "paper" && computerSelection == "rock") {
     playerScore++;
-    return "paper beats rock, you got it ! ";
+    text.textContent = "paper beats rock, you got it ! ";
+    results.textContent =
+      "Your score: " + playerScore + "  Computer score: " + computerScore;
   } else if (playerSelection == "scissors" && computerSelection == "rock") {
     computerScore++;
-    return "rock beats scissors, go hang yourself !";
+    text.textContent = "rock beats scissors, go hang yourself !";
+    results.textContent =
+      "Your score: " + playerScore + "  Computer score: " + computerScore;
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
     playerScore++;
-    return "rock beats scissors, good job !";
+    text.textContent = "rock beats scissors, good job !";
+    results.textContent =
+      "Your score: " + playerScore + "  Computer score: " + computerScore;
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
     computerScore++;
-    return "scissors beats paper, you loose boy!";
+    text.textContent = "scissors beats paper 😖;
+    results.textContent =
+      "Your score: " + playerScore + "  Computer score: " + computerScore;
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
     playerScore++;
-    return "scissors beats paper, good job !";
+    text.textContent = "scissors beats paper, good job !";
+    results.textContent =
+      "Your score: " + playerScore + "  Computer score: " + computerScore;
+  } else {
+    text.textContent = " It´s a draw!";
+    results.textContent =
+      "Your score: " + playerScore + "  Computer score: " + computerScore;
+  }
+  if (playerScore == 5 && computerScore < 5) {
+    text.textContent = "YOU WON THE GAME BOY !";
+    results.textContent = "";
+    playerScore = 0;
+    computerScore = 0;
+  } else if (computerScore == 5 && playerScore < 5) {
+    text.textContent = "YOU LOOOSSEEE ...!";
+    results.textContent = "";
+    playerScore = 0;
+    computerScore = 0;
   }
 }
 
@@ -60,8 +90,6 @@ var result;
   return result;
 }*/
 
-const results = document.querySelector("div");
-
 // Add event listener to buttons
 // Rock Button
 
@@ -74,14 +102,6 @@ rock_button.addEventListener("click", () => {
   computerSelection = getComputerChoice();
 
   playRound(playerSelection, computerSelection);
-
-  results.textContent =
-    "You have " +
-    playerScore +
-    " points! " +
-    "The computer has " +
-    computerScore +
-    " points!";
 });
 
 // Scissors Button
@@ -91,13 +111,6 @@ scissors_button.addEventListener("click", () => {
   computerSelection = getComputerChoice();
 
   playRound(playerSelection, computerSelection);
-  results.textContent =
-    "You have " +
-    playerScore +
-    " points! " +
-    "The computer has " +
-    computerScore +
-    " points!";
 });
 
 // Paper Button
@@ -107,11 +120,4 @@ paper_button.addEventListener("click", () => {
   computerSelection = getComputerChoice();
 
   playRound(playerSelection, computerSelection);
-  results.textContent =
-    "You have " +
-    playerScore +
-    " points! " +
-    "The computer has " +
-    computerScore +
-    " points!";
 });
