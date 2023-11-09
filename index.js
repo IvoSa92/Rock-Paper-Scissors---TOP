@@ -39,7 +39,7 @@ function playRound(playerSelection, computerSelection) {
       "Your score: " + playerScore + "  Computer score: " + computerScore;
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
     computerScore++;
-    text.textContent = "scissors beats paper 😖;
+    text.textContent = "scissors beats paper 😖";
     results.textContent =
       "Your score: " + playerScore + "  Computer score: " + computerScore;
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
